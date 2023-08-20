@@ -1,0 +1,16 @@
+/*
+!.gitignore
+# yabai config
+!/yabai
+/yabai/*
+!/yabai/yabairc
+
+# skhd config
+!/skhd
+/skhd/*
+!/skhd/skhdrc
+
+# starship config
+!starship.toml
+
+!README.md

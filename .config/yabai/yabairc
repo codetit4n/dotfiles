@@ -44,7 +44,7 @@ yabai -m rule --add app="^Notes$" manage=off
 yabai -m rule --add app="^Bumpr$" manage=off
 yabai -m rule --add app="^HotKey$" manage=off
 yabai -m rule --add app="^Docker Desktop$" manage=off
-yabai -m rule --add app="^Brave Browser$" manage=off
+yabai -m rule --add app="^Google Chrome$" manage=off
 yabai -m rule --add app="^Sublime Text$" manage=off
 yabai -m rule --add app="^Slack$" manage=off
 yabai -m rule --add app="^Postman$" manage=off

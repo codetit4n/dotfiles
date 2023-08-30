@@ -2,7 +2,6 @@
 !/.gitignore
 # ~/.config/ files - yabai, skhd, starship
 !/.config
-!/.config/.gitignore
 
 # alacrity
 !/.alacritty.yml

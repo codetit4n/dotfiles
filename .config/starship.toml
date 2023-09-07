@@ -10,18 +10,23 @@ error_symbol = '[x](bold red)'
 
 [aws]
 symbol = "  "
+format = '[${symbol}(${version} )]($style)'
 
 [buf]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [c]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [conda]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [dart]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [directory]
 read_only = " 󰌾"
@@ -31,12 +36,15 @@ truncation_symbol = ".| "
 
 [docker_context]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [elixir]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [elm]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [fossil_branch]
 symbol = " "
@@ -47,15 +55,19 @@ format = "[$symbol$branch]($style) "
 
 [golang]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [guix_shell]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [haskell]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [haxe]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [hg_branch]
 symbol = " "
@@ -65,27 +77,33 @@ ssh_symbol = " "
 
 [java]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [julia]
 symbol = " "
 
 [lua]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [memory_usage]
 symbol = "󰍛 "
 
 [meson]
 symbol = "󰔷 "
+format = '[${symbol}(${version} )]($style)'
 
 [nim]
 symbol = "󰆥 "
+format = '[${symbol}(${version} )]($style)'
 
 [nix_shell]
 symbol = " "
+format = ' [${symbol}(${version} )]($style)'
 
 [nodejs]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [os.symbols]
 Alpaquita = " "
@@ -130,24 +148,29 @@ Windows = "󰍲 "
 
 [package]
 symbol = "󰏗 "
+disabled = true
 
 [pijul_channel]
 symbol = " "
 
 [python]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [rlang]
 symbol = "󰟔 "
 
 [ruby]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [rust]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 [scala]
 symbol = " "
+format = '[${symbol}(${version} )]($style)'
 
 # disable the battery module
 [battery]
@@ -173,3 +196,6 @@ style = "bright-black"
 
 [git_metrics]
 disabled = false
+
+[cmd_duration]
+format = '. [$duration](bold yellow)'

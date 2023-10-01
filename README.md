@@ -2,6 +2,12 @@
 
 This repo contains all my dotfiles except [my neovim configs](https://github.com/codeTIT4N/nvim-config) for `macOS`
 
+### Install
+
+```bash
+sh install.sh
+```
+
 ### Tools I use
 
 - [yabai](https://github.com/koekeishiya/yabai)

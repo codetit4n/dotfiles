@@ -70,8 +70,6 @@ ZSH_THEME="amuse"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting)
-
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
@@ -102,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dev="cd ~/dev"
+alias lync="cd ~/lync"
 alias config-starship="nvim ~/.config/starship.toml"
 alias config-zsh="nvim ~/.zshrc"
 alias config-tmux="nvim ~/.tmux.conf"
@@ -115,11 +114,15 @@ alias tnv="tmux new -s \"\$(basename \"\$(pwd)\" | sed 's#.*/##')\" 'nvim .'"
 
 alias nv="nvim"
 
+alias aptos="~/bin/aptos"
+
+alias docker="sudo docker"
+
 eval "$(starship init zsh)"
 
 export TERM=xterm-256color
 
 autoload -U compinit && compinit
+source /usr/share/nvm/init-nvm.sh
+export PATH="/home/lokesh/.local/bin:$PATH"
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

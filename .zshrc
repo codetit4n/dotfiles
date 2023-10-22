@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dev="cd ~/dev"
+alias dotfiles="cd ~/dotfiles"
 alias lync="cd ~/lync"
 alias config-starship="nvim ~/.config/starship.toml"
 alias config-zsh="nvim ~/.zshrc"

@@ -1,11 +1,17 @@
 # dotfiles
 
-This repo contains all my dotfiles except [my neovim configs](https://github.com/codeTIT4N/nvim-config) for `arch linux`
+This repo contains all my dotfiles except [my neovim configs](https://github.com/codeTIT4N/nvim-config) for `Arch Linux`
 
 ### Install
 
 ```bash
 sh install.sh
+```
+
+### Sync - Put system files in the repo
+
+```bash
+sh sync.sh
 ```
 
 ### Tools I use
@@ -15,4 +21,4 @@ sh install.sh
 - [alacritty](https://github.com/alacritty/alacritty)
 - [starship](https://github.com/starship/starship)
 - [neovim](https://github.com/neovim/neovim)
-- TBC
+- [i3](https://i3wm.org/)

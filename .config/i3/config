@@ -236,7 +236,7 @@ bindsym $mod+x exec /home/lokesh/.config/scripts/lock
 for_window [class="firefoxdeveloperedition"] move to workspace $ws2
 for_window [class="Brave-browser"] move to workspace $ws3
 for_window [class="Spotify"] move to workspace $ws9
-for_window [class="Subl"] move to workspace $ws8
+for_window [class="kwrite"] move to workspace $ws8
 for_window [class="TelegramDesktop"] move to workspace $ws7
 
 # Window Compositor

@@ -16,7 +16,7 @@ sh sync.sh
 
 ### Tools I use
 
-- [zsh](https://github.com/ohmyzsh/ohmyzsh/)
+- [fish](https://fishshell.com)
 - [tmux](https://github.com/tmux/tmux)
 - [alacritty](https://github.com/alacritty/alacritty)
 - [starship](https://github.com/starship/starship)

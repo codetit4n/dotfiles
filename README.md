@@ -8,6 +8,12 @@ This repo contains all my dotfiles except [my neovim configs](https://github.com
 sh install.sh
 ```
 
+### Sync - Put system files in the repo
+
+```bash
+sh sync.sh
+```
+
 ### Tools I use
 
 - [yabai](https://github.com/koekeishiya/yabai)

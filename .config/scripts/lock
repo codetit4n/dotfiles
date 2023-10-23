@@ -3,7 +3,7 @@
 BLANK='#00000000'
 CLEAR='#ffffff22'
 DEFAULT='#2236f0'
-TEXT='#f2faf3'
+TEXT='#7A871E'
 WRONG='#d9021b'
 VERIFYING='#10c76b'
 
@@ -33,4 +33,4 @@ VERIFYING='#10c76b'
 --indicator                  \
 --time-str="%I:%M %p"        \
 --date-str="%A, %b %m"       \
-#--keylayout 1                \
+-i /home/lokesh/Pictures/linux2.png

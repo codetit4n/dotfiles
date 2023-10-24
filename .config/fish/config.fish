@@ -39,6 +39,8 @@ abbr l 'exa'
 abbr ll 'exa -l'
 abbr la 'exa -la'
 
+abbr cat 'bat'
+
 abbr e 'exit'
 
 

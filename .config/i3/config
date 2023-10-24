@@ -193,7 +193,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Window Colors
-set $bgcolor 	#36220b33
+set $bgcolor 	#00008B8A
 set $ibgcolor 	#363636
 set $fws 	#36220b80
 set $barcolor 	#36220b0D
@@ -201,11 +201,11 @@ set $textcolor 	#ffffff
 set $itextcolor	#808080
 set $ubgcolor 	#ff0000
 
-# 			border		background		text		indicator
-client.focused		$bgcolor	$bgcolor		$textcolor	$bgcolor
-client.unfocused	$ibgcolor	$ibgcolor		$itextcolor	$ibgcolor
+# 			            border		background		text		indicator
+client.focused		    $bgcolor	$bgcolor		$textcolor	$bgcolor
+client.unfocused	    $ibgcolor	$ibgcolor		$itextcolor	$ibgcolor
 client.focused_inactive	$ibgcolor	$ibgcolor		$itextcolor	$ibgcolor
-client.urgent		$ubgcolor	$ubgcolor		$textcolor	$ubgcolor
+client.urgent		    $ubgcolor	$ubgcolor		$textcolor	$ubgcolor
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -240,6 +240,9 @@ for_window [class="TelegramDesktop"] move to workspace $ws7
 
 # Window Compositor
 exec_always picom -f
+
+# screen locking
+exec --no-startup-id xautolock -time 15 -locker '$HOME/.config/scripts/lock' 
 
 # Polybar launch script
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh

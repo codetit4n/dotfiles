@@ -21,6 +21,7 @@ alias scriptyt "tmux new -s \"scripts-config\" 'nvim ~/.config/scripts'"
 alias dotfiles "cd ~/dotfiles"
 alias dev "cd ~/dev"
 alias lync "cd ~/lync"
+alias oss "cd ~/oss"
 
 alias aptos "~/bin/aptos"
 alias docker="sudo docker"
@@ -42,6 +43,10 @@ abbr cat 'bat'
 
 abbr e 'exit'
 
+abbr cd 'z'
+
 abbr start-ssh 'sudo systemctl start sshd.service'
+
+zoxide init fish | source
 
 starship init fish | source

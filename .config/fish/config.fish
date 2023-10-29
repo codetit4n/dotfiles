@@ -15,8 +15,7 @@ alias terminaly "nvim ~/.alacritty.yml"
 alias terminalyt "tmux new -s \"alacritty-config\" 'nvim ~/.alacritty.yml'"
 alias i3y "nvim ~/.config/i3/config"
 alias i3yt "tmux new -s \"i3-config\" 'nvim ~/.config/i3/config'"
-alias nvimy "nvim ~/.config/nvim"
-alias nvimyt "tmux new -s \"nvim-config\" 'nvim ~/.config/nvim'"
+alias nvimy "cd ~/.config/nvim"
 alias scripty "nvim ~/.config/scripts"
 alias scriptyt "tmux new -s \"scripts-config\" 'nvim ~/.config/scripts'"
 alias dotfiles "cd ~/dotfiles"
@@ -43,5 +42,6 @@ abbr cat 'bat'
 
 abbr e 'exit'
 
+abbr start-ssh 'sudo systemctl start sshd.service'
 
 starship init fish | source

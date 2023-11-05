@@ -91,7 +91,7 @@ def get_updates():
 def get_aur_yaourt_updates():
     output = ''
     try:
-        output = check_output(['yaourt', '-Qua']).decode('utf-8')
+        output = check_output(['yaourt', '-Qua']).decode('utf-7')
     except subprocess.CalledProcessError as exc:
         # yaourt exits with 1 and no output if no updates are available.
         # we ignore this case and go on
@@ -139,11 +139,11 @@ elif args.aur_yay:
 update_count = len(updates)
 if update_count > 0:
     if update_count == 1:
-      info = str(update_count) + ' update available'
-      short_info = str(update_count) + ' update'
+      info = str(update_count) + ' '
+      short_info = str(update_count) + ' '
     else:
-      info = str(update_count) + ' updates available'
-      short_info = str(update_count) + ' updates'
+      info = str(update_count) + ' '
+      short_info = str(update_count) + ' '
 
     matches = matching_updates(updates, args.watch)
     if matches:

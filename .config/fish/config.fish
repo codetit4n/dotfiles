@@ -1,5 +1,5 @@
 function fish_greeting
-    fortune -s | lolcat -a -s 100
+    fortune -se | lolcat
 end
 
 if test -f /home/lokesh/.autojump/share/autojump/autojump.fish; . /home/lokesh/.autojump/share/autojump/autojump.fish; end
@@ -20,6 +20,7 @@ alias scripty "nvim ~/.config/scripts"
 alias scriptyt "tmux new -s \"scripts-config\" 'nvim ~/.config/scripts'"
 alias dotfiles "cd ~/dotfiles"
 alias dev "cd ~/dev"
+alias learn "cd ~/learning"
 alias lync "cd ~/lync"
 alias oss "cd ~/oss"
 

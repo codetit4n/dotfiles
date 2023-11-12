@@ -8,8 +8,9 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
-set $sup Mod4
+set $mod Mod4
+#set $sup Mod1
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -105,7 +106,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+Shift+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -230,7 +231,7 @@ bar {
 }
 
 # hide the title bar
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 1
 
 
 # Display wallpaper
@@ -241,7 +242,7 @@ bindsym $mod+x exec /home/lokesh/.config/scripts/lock
 
 # Assign programs to Workspaces
 for_window [class="firefoxdeveloperedition"] move to workspace $ws1
-for_window [class="Brave-browser"] move to workspace $ws3
+for_window [class="Brave-browser"] move to workspace $ws2
 for_window [class="notion-app"] move to workspace $ws5
 for_window [class="TelegramDesktop"] move to workspace $ws6
 for_window [class="kwrite"] move to workspace $ws8

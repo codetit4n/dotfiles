@@ -35,6 +35,9 @@ alias tnv "tmux new -s \"\$(basename \"\$(pwd)\" | sed 's#.*/##')\" 'nvim .'"
 set -gx EDITOR /usr/bin/nvim
 set -gx GIT_EDITOR /usr/bin/nvim
 
+# tmp
+bass export PATH="/home/lokesh/.local/bin:$PATH"
+
 abbr ls 'exa'
 abbr l 'exa'
 abbr ll 'exa -l'

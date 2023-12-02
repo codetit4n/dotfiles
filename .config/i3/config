@@ -247,7 +247,7 @@ for_window [class="^.*"] border pixel 1
 
 
 # Display wallpaper
-exec_always feh --bg-fill /home/lokesh/Pictures/linux12.jpg
+exec_always feh --bg-fill /home/lokesh/Pictures/arch22.jpg
 
 # Keybinding for i3lock
 bindsym $mod+x exec /home/lokesh/.config/scripts/lock

@@ -49,7 +49,8 @@ abbr e 'exit'
 
 abbr cd 'z'
 
-abbr start-ssh 'sudo systemctl start sshd.service'
+abbr ssh-start 'sudo systemctl start sshd.service'
+abbr ssh-stop 'sudo systemctl stop sshd.service'
 
 zoxide init fish | source
 

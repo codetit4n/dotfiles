@@ -165,3 +165,4 @@ expand-alias-and-accept-line() {
 zle -N accept-line expand-alias-and-accept-line
 
 abbrev-alias ls="exa"
+abbrev-alias la="exa -la"

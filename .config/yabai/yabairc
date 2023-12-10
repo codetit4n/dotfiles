@@ -1,7 +1,7 @@
 # default layout (can be bsp, stack or float)
 yabai -m config layout bsp
-yabai -m config mouse_follows_focus          off
-yabai -m config focus_follows_mouse          autoraise
+yabai -m config mouse_follows_focus          on
+yabai -m config focus_follows_mouse          autofocus
 
 # new window spawns to the right if vertical split, or bottom if horizontal split
 yabai -m config window_placement first_child

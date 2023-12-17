@@ -33,4 +33,4 @@ VERIFYING='#10c76b'
 --indicator                  \
 --time-str="%I:%M %p"        \
 --date-str="%A, %b %m"       \
--i /home/lokesh/Pictures/linux2.png
+-i /home/lokesh/Pictures/normal2.jpg

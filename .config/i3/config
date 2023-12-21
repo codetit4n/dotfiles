@@ -136,10 +136,10 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
-set $ws7 "7 "
-set $ws8 "8 "
-set $ws9 "9 "
-set $ws10 "10 "
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -207,7 +207,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Window Colors
-set $bgcolor 	#9F2B68FF
+set $bgcolor 	#7b7272
 set $ibgcolor 	#363636
 set $fws 	    #36220b80
 set $barcolor 	#36220b0D
@@ -226,21 +226,23 @@ client.urgent		    $ubgcolor	$ubgcolor		$textcolor	$ubgcolor
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    position top
-    status_command i3blocks -c /home/lokesh/.config/i3blocks/i3blocks.conf
-	i3bar_command i3bar --transparency
-	tray_output none
-	font pango:Firacode Nerd Font 13
-	colors {
-		background $barcolor
-		separator #ffffff
-		# 			        border		background		text
-		focused_workspace	$fws		$fws			$textcolor
-		inactive_workspace	$ibgcolor	$ibgcolor		$itextcolor
-		urgent_workspace	$ubgcolor	$ubgcolor		$textcolor
-	}
-}
+#bar {
+#    position top
+#    status_command i3blocks -c /home/lokesh/.config/i3blocks/i3blocks.conf
+#	i3bar_command i3bar --transparency
+#	tray_output none
+#	font pango:Firacode Nerd Font 13
+#	colors {
+#		background $barcolor
+#		separator #ffffff
+#		# 			        border		background		text
+#		focused_workspace	$fws		$fws			$textcolor
+#		inactive_workspace	$ibgcolor	$ibgcolor		$itextcolor
+#		urgent_workspace	$ubgcolor	$ubgcolor		$textcolor
+#	}
+#}
+
+
 
 # hide the title bar
 for_window [class="^.*"] border pixel 1
@@ -264,4 +266,4 @@ exec_always picom -f
 
 
 # Polybar launch script
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id /home/lokesh/.config/polybar/launch.sh &

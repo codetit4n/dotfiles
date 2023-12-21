@@ -24,8 +24,11 @@ alias learn "cd ~/learning"
 alias lync "cd ~/lync"
 alias oss "cd ~/oss"
 
+
 alias aptos "~/bin/aptos"
 alias docker="sudo docker"
+
+alias todo "tmux new -s todo 'nvim ~/dev/todo.txt'"
 
 # tmux session
 alias tm "tmux new -s \"\$(basename \"\$(pwd)\" | sed 's#.*/##')\""

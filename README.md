@@ -22,3 +22,4 @@ sh sync.sh
 - [starship](https://github.com/starship/starship)
 - [neovim](https://github.com/neovim/neovim)
 - [i3](https://i3wm.org/)
+- [polybar](https://github.com/polybar/polybar)

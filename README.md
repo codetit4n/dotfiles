@@ -1,6 +1,6 @@
 # dotfiles
 
-This repo contains all my dotfiles except [my neovim configs](https://github.com/codeTIT4N/nvim-config) for `Arch Linux`
+For my `Arch Linux VMs`
 
 ### Install
 

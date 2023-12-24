@@ -2,20 +2,17 @@
 
 case "$1" in
     --popup)
-        yad=$(yad --width 300 --entry --undecorated --title "System Logout" --image=gnome-shutdown --text "Choose action:" --entry-text "Shutdown" "Reboot" "Logout" "Lock")
+        yad=$(yad --width 300 --entry --undecorated --title "Powermenu" --image=gnome-shutdown --text "Choose an action:" --entry-text "Shutdown" "Reboot" "Lock")
 
         case "$yad" in
             Shutdown)
-                shutdown -h now
+                /sbin/shutdown -h now
                 ;;
             Reboot)
-                reboot
+                /sbin/reboot
                 ;;
             Lock)
                 ~/.config/scripts/lock
-                ;;
-            Logout)
-                kill -9 -1
                 ;;
         esac
         ;;

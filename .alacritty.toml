@@ -1,0 +1,21 @@
+[colors.primary]
+background = "#000000"
+foreground = "#d7d9db"
+
+[font]
+size = 12.5
+
+[font.normal]
+family = "Hack"
+style = "Regular"
+
+[window]
+dynamic_title = true
+opacity = 0.85
+
+[window.dimensions]
+columns = 98
+lines = 25
+
+[window.padding]
+x = 5

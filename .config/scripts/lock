@@ -32,5 +32,5 @@ VERIFYING='#10c76b'
 --clock                      \
 --indicator                  \
 --time-str="%I:%M %p"        \
---date-str="%A, %b %m"       \
+--date-str="%A, %b %d"       \
 -i /home/lokesh/Pictures/normal2.jpg

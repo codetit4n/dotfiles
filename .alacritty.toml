@@ -6,7 +6,7 @@ foreground = "#d7d9db"
 size = 12.5
 
 [font.normal]
-family = "Hack"
+family = "Monospace"
 style = "Regular"
 
 [window]

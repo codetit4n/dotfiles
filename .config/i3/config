@@ -170,7 +170,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # screenshot
-bindsym $sup+s exec flameshot gui -p /home/lokesh/Pictures/Screenshots
+bindsym $sup+s exec flameshot gui -p ~/Pictures/Screenshots
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -228,7 +228,7 @@ client.urgent		    $ubgcolor	$ubgcolor		$textcolor	$ubgcolor
 # finds out, if available)
 #bar {
 #    position top
-#    status_command i3blocks -c /home/lokesh/.config/i3blocks/i3blocks.conf
+#    status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
 #	i3bar_command i3bar --transparency
 #	tray_output none
 #	font pango:Firacode Nerd Font 13
@@ -249,10 +249,10 @@ for_window [class="^.*"] border pixel 1
 
 
 # Display wallpaper
-exec_always feh --bg-fill /home/lokesh/Pictures/normal3.png
+exec_always feh --bg-fill ~/Pictures/normal3.png
 
 # Keybinding for i3lock
-bindsym $mod+x exec /home/lokesh/.config/scripts/lock
+bindsym $mod+x exec ~/.config/scripts/lock
 
 # Assign programs to Workspaces
 for_window [class="TelegramDesktop"] move to workspace $ws9
@@ -267,4 +267,4 @@ exec_always picom -f
 
 
 # Polybar launch script
-exec_always --no-startup-id /home/lokesh/.config/polybar/launch.sh &
+exec_always --no-startup-id ~/.config/polybar/launch.sh &

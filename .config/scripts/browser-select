@@ -1,14 +1,33 @@
 #!/bin/bash
 
-BROWSERS='TRUE Firefox-Developer-Edition FALSE Brave FALSE Thorium-Browser'
-HEIGHT=350
+# Display a dialog to select a browser
+browser=$(yad --title="Select Browser" \
+              --image="web-browser" \
+              --text="Choose a browser" \
+              --button="Firefox ":2 \
+              --button="Brave":3 \
+              --button="Thorium":4 \
+              --button="(x)":1 \
+              --width=350 \
+              --height=120 \
+              --center)
 
-LINK=$*
-BROWSER=$(zenity --list --radiolist --text "${LINK:0:100}" --column='' --column='Browsers' --height=$HEIGHT --title='Select browser to open link' $BROWSERS)
+case $? in
+    2)
+        /usr/bin/firefox-developer-edition "$1" &
+        ;;
+    3)
+        /usr/bin/brave "$1" &
+        ;;
+    4)
+        /usr/bin/thorium-browser "$1" &
+        ;;
+    *)
+        # User canceled the dialog
+        echo "Operation canceled."
+        ;;
+esac
 
-if [ ! -z "$BROWSER" ];
-then
-  # bash magic to make BROWSER lower case:
-  ${BROWSER,,} "$LINK" &
-fi
+exit 0
+
 

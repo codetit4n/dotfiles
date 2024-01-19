@@ -35,6 +35,8 @@ alias tm "tmux new -s \"\$(basename \"\$(pwd)\" | sed 's#.*/##')\""
 # tmux session with nvim
 alias tnv "tmux new -s \"\$(basename \"\$(pwd)\" | sed 's#.*/##')\" 'nvim .'"
 
+alias gitlync "git config user.name \"Lokesh Kumar\" && git config user.email \"lokesh@lync.world\""
+
 set -gx EDITOR /usr/bin/nvim
 set -gx GIT_EDITOR /usr/bin/nvim
 set -gx PATH $PATH $HOME/.cargo/bin

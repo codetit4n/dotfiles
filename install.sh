@@ -34,7 +34,7 @@ for file in $(ls -A $dest_dir/.config/scripts); do
     echo "chmod +x $file"
 done
 
-# chmod +x all files in dest_dir/.config/scripts directory
+# chmod +x all files in dest_dir/.config/polybar/scripts directory
 for file in $(ls -A $dest_dir/.config/polybar/scripts); do
     sudo chmod +x $dest_dir/.config/polybar/scripts/$file
     echo "chmod +x $file"

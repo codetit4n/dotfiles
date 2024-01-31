@@ -69,3 +69,7 @@ end
 # solana
 set -gx PATH "/home/tit4n/.local/share/solana/install/active_release/bin" $PATH
 
+
+export PATH="$PATH:/home/tit4n/.foundry/bin"
+
+export PATH="$PATH:/home/tit4n/.foundry/bin"

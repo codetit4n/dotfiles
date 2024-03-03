@@ -258,7 +258,7 @@ bindsym $mod+x exec ~/.config/scripts/lock
 for_window [class="TelegramDesktop"] move to workspace $ws9
 for_window [class="Whatsapp-for-linux"] move to workspace $ws9
 for_window [class="Spotify"] move to workspace $ws8
-for_window [class="Thorium-browser"] move to workspace $ws7
+for_window [class="Slack"] move to workspace $ws7
 for_window [class="thunderbird"] move to workspace $ws10
 for_window [class="Yad"] floating enable
 

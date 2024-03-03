@@ -1,9 +1,36 @@
 #!/usr/bin/env bash
 
+ignore_list=(
+    "node_modules"
+    ".git"
+    ".github"
+    ".gitignore"
+    ".gitmodules"
+    ".gitattributes"
+    ".gitlab-ci.yml"
+    ".gitkeep"
+    ".gitlab"
+    ".gitlab-ci"
+    ".gitlab-ci.yml"
+    "build"
+    "dist"
+    "target"
+    "out"
+    "obj"
+)
+
+find_cmd="find ~/dev ~/lync ~/learning ~/dotfiles ~/.config -maxdepth 5 -mindepth 1 -type d "
+
+for folder in "${ignore_list[@]}"; do
+    find_cmd+=" -name \"$folder\" -prune -o "
+done
+
+find_cmd+=" -print -type d"
+
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~ -type d | fzf)
+    selected=$(eval $find_cmd | fzf)
 fi
 
 if [[ -z $selected ]]; then

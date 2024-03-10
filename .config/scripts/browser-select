@@ -6,7 +6,7 @@ browser=$(yad --title="Select Browser" \
               --text="Choose a browser" \
               --button="Firefox ":2 \
               --button="Brave":3 \
-              --button="Thorium":4 \
+              --button="Chromium":4 \
               --button="(x)":1 \
               --width=350 \
               --height=120 \
@@ -20,7 +20,7 @@ case $? in
         /usr/bin/brave "$1" &
         ;;
     4)
-        /usr/bin/thorium-browser "$1" &
+        /usr/bin/chromium "$1" &
         ;;
     *)
         # User canceled the dialog

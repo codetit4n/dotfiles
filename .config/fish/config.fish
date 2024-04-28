@@ -11,7 +11,7 @@ alias tmuxy "tmux new -s \"tmux-config\" 'nvim ~/.tmux.conf'"
 alias starshipy "tmux new -s \"starship-config\" 'nvim ~/.config/starship.toml'"
 alias terminaly "tmux new -s \"alacritty-config\" 'nvim ~/.alacritty.toml'"
 alias i3y "tmux new -s \"i3-config\" 'nvim ~/.config/i3/config'"
-alias nvimy "tmux new -s \"nvim-config\" 'nvim ~/.config/nvim; fish'"
+alias nvimy "cd ~/.config/nvim"
 
 alias dotfiles "cd ~/dotfiles"
 alias dev "cd ~/dev"

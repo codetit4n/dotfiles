@@ -4,9 +4,9 @@
 browser=$(yad --title="Select Browser" \
               --image="web-browser" \
               --text="Choose a browser" \
-              --button="Firefox ":2 \
-              --button="Brave":3 \
-              --button="Chromium":4 \
+              --button="Personal":2 \
+              --button="Work":3 \
+              --button="Extra":4 \
               --button="(x)":1 \
               --width=350 \
               --height=120 \
@@ -14,10 +14,10 @@ browser=$(yad --title="Select Browser" \
 
 case $? in
     2)
-        /usr/bin/firefox-developer-edition "$1" &
+        /usr/bin/brave-beta --password-store=basic "$1" &
         ;;
     3)
-        /usr/bin/brave "$1" &
+        /usr/bin/brave --password-store=basic "$1" &
         ;;
     4)
         /usr/bin/chromium "$1" &

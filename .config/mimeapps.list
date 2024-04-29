@@ -1,0 +1,23 @@
+[Default Applications]
+x-scheme-handler/postman=Postman.desktop
+text/html=browser-select.desktop
+x-scheme-handler/http=browser-select.desktop
+x-scheme-handler/https=browser-select.desktop
+x-scheme-handler/about=browser-select.desktop
+x-scheme-handler/unknown=browser-select.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-PRW3J2.desktop
+message/rfc822=userapp-Thunderbird-PRW3J2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-PRW3J2.desktop
+application/epub+zip=org.pwmt.zathura.desktop
+application/pdf=org.pwmt.zathura.desktop
+
+[Added Associations]
+image/jpeg=org.nomacs.ImageLounge.desktop;org.cubocore.CoreImage.desktop;ida.desktop;feh.desktop;
+image/png=org.nomacs.ImageLounge.desktop;org.cubocore.CoreImage.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-31UKH2.desktop;userapp-Thunderbird-PRW3J2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-31UKH2.desktop;userapp-Thunderbird-PRW3J2.desktop;
+application/epub+zip=org.pwmt.zathura.desktop;
+application/pdf=org.pwmt.zathura.desktop;
+text/plain=sublime_text.desktop;
+image/svg+xml=sublime_text.desktop;
+video/mpeg=sublime_text.desktop;

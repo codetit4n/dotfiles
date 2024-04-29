@@ -153,7 +153,6 @@ bindsym $mod+w workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+m workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-bindsym $mod+c workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 bindsym $mod+e workspace number $ws10
 
@@ -271,3 +270,8 @@ exec_always picom -f
 
 # Polybar launch script
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
+
+# clipboard tool
+exec --no-startup-id greenclip daemon>/dev/null
+bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard
+

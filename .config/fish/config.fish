@@ -21,7 +21,6 @@ alias oss "cd ~/oss"
 
 
 alias aptos "~/bin/aptos"
-alias docker="sudo docker"
 
 alias todo "tmux new -s todo 'nvim ~/dev/todo.txt'"
 

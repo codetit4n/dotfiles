@@ -27,7 +27,7 @@ exec --no-startup-id dex --autostart --environment i3
 # Start thunderbird on startup
 exec --no-startup-id thunderbird
 # Start Whatsapp on startup
-exec --no-startup-id whatsapp-for-linux
+exec --no-startup-id zapzap
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -259,7 +259,7 @@ bindsym $mod+x exec ~/.config/scripts/lock
 
 # Assign programs to Workspaces
 for_window [class="TelegramDesktop"] move to workspace $ws9
-for_window [class="Whatsapp-for-linux"] move to workspace $ws9
+for_window [class="ZapZap"] move to workspace $ws9
 for_window [class="Spotify"] move to workspace $ws8
 for_window [class="Slack"] move to workspace $ws7
 for_window [class="thunderbird"] move to workspace $ws10

@@ -19,7 +19,7 @@ ignore_list=(
     "obj"
 )
 
-find_cmd="find ~/dev ~/lync ~/learning ~/dotfiles ~/.config -maxdepth 5 -mindepth 1 -type d "
+find_cmd="find ~/dev ~/lync ~/learning ~/dotfiles ~/.config -maxdepth 4 -mindepth 1 -type d "
 
 for folder in "${ignore_list[@]}"; do
     find_cmd+=" -name \"$folder\" -prune -o "

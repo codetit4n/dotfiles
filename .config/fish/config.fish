@@ -60,6 +60,9 @@ abbr tl "tmux ls"
 abbr ssh-start 'sudo systemctl start sshd.service'
 abbr ssh-stop 'sudo systemctl stop sshd.service'
 
+abbr docker-start 'sudo systemctl start docker.service'
+abbr docker-stop 'sudo systemctl stop docker.service'
+
 zoxide init fish | source
 
 starship init fish | source
@@ -78,3 +81,4 @@ set -gx PATH "/home/tit4n/.local/share/solana/install/active_release/bin" $PATH
 export PATH="$PATH:/home/tit4n/.foundry/bin"
 
 export PATH="$PATH:/home/tit4n/.foundry/bin"
+export PATH="$HOME/.fuelup/bin:$PATH"

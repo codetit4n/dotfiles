@@ -1,6 +1,6 @@
 # dotfiles
 
-This repo contains all my dotfiles except [my neovim configs](https://github.com/codeTIT4N/nvim-config/tree/macOS) for `macOS`
+This repo contains all my dotfiles except [my neovim configs](https://github.com/codetit4n/nvim-config/tree/macOS) for `macOS`
 
 ### Install
 

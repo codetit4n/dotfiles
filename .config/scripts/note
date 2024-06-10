@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+open_project() {
+  if [ ! -d ~/dev/personal-web/personal-website/content/notes ]; then
+    echo "Directory ~/dev/personal-web/personal-website/content/notes does not exist"
+    exit 1
+  fi
+
+  # Check if the tmux session already exists
+  if ! tmux has-session -t personal-website 2>/dev/null; then
+    # Create a new tmux session with the name "personal-website" and run nvim
+    tmux new-session -d -s personal-website -n editor "nvim ~/dev/personal-web/personal-website/content/notes"
+  else
+    echo "Tmux session 'personal-website' already exists"
+  fi
+
+  # Create a new window in the tmux session
+  tmux new-window -t personal-website -c ~/dev/personal-web/personal-website
+
+  # run hugo server in the new window
+  tmux send-keys -t personal-website:2 "hugo server" C-m
+
+  # open localhost:1313 in the browser
+  xdg-open http://localhost:1313
+
+  # Attach to the tmux session
+  tmux attach-session -t personal-website
+
+}
+
+args=("$@")
+str=""
+for i in "${args[@]}"; do
+  str="$str-$i"
+done
+
+if [ "$str" == "" ]; then
+  open_project
+  exit 0
+fi
+
+# Remove the first character
+str="${str:1}"
+
+echo $str
+# TODO: Add more commands
+

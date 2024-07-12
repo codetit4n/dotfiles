@@ -13,8 +13,8 @@
   <property name="misc-date-style" type="string" value="THUNAR_DATE_STYLE_SIMPLE"/>
   <property name="hidden-bookmarks" type="array">
     <value type="string" value="recent:///"/>
-    <value type="string" value="computer:///"/>
     <value type="string" value="file:///home/tit4n/Desktop"/>
+    <value type="string" value="computer:///"/>
   </property>
   <property name="hidden-devices" type="array">
     <value type="string" value="6E52C64552C6122F"/>

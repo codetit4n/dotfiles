@@ -39,7 +39,7 @@ set -gx EDITOR /usr/bin/nvim
 set -gx GIT_EDITOR /usr/bin/nvim
 set -gx PATH $PATH $HOME/.cargo/bin
 
-bass export PATH="/home/lokesh/.local/bin:$PATH"
+set -gx PATH $PATH /home/lokesh/.local/bin
 
 abbr ls 'exa'
 abbr l 'exa'
@@ -82,3 +82,7 @@ export PATH="$PATH:/home/tit4n/.foundry/bin"
 
 export PATH="$PATH:/home/tit4n/.foundry/bin"
 export PATH="$HOME/.fuelup/bin:$PATH"
+
+set -gx ANDROID_HOME $HOME/Android/Sdk
+set -gx PATH $PATH $ANDROID_HOME/emulator
+set -gx PATH $PATH $ANDROID_HOME/platform-tools

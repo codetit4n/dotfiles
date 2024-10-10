@@ -12,9 +12,10 @@ application/epub+zip=org.pwmt.zathura.desktop
 application/pdf=org.pwmt.zathura.desktop
 x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
 application/vnd.apple.keynote=sublime_text.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
 
 [Added Associations]
-image/jpeg=org.nomacs.ImageLounge.desktop;org.cubocore.CoreImage.desktop;ida.desktop;feh.desktop;
+image/jpeg=org.nomacs.ImageLounge.desktop;org.cubocore.CoreImage.desktop;feh.desktop;ida.desktop;
 image/png=org.nomacs.ImageLounge.desktop;org.cubocore.CoreImage.desktop;
 x-scheme-handler/mailto=userapp-Thunderbird-31UKH2.desktop;userapp-Thunderbird-PRW3J2.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-31UKH2.desktop;userapp-Thunderbird-PRW3J2.desktop;
@@ -25,3 +26,4 @@ image/svg+xml=sublime_text.desktop;
 video/mpeg=sublime_text.desktop;
 application/pkix-cert=sublime_text.desktop;
 application/vnd.apple.keynote=sublime_text.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;

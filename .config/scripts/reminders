@@ -1,0 +1,3 @@
+#!/bin/bash
+
+brave-beta --password-store=basic https://www.icloud.com/reminders

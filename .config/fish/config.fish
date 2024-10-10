@@ -38,6 +38,7 @@ alias gitlync "git config user.name \"Lokesh Kumar\" && git config user.email \"
 set -gx EDITOR /usr/bin/nvim
 set -gx GIT_EDITOR /usr/bin/nvim
 set -gx PATH $PATH $HOME/.cargo/bin
+set -gx PATH $PATH $HOME/go/bin
 
 set -gx PATH $PATH /home/lokesh/.local/bin
 

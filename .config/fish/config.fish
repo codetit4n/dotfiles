@@ -38,5 +38,5 @@ abbr ta "tmux attach"
 abbr tl "tmux ls"
 
 
-#zoxide init fish | source
+zoxide init fish | source
 

@@ -20,3 +20,4 @@ sh sync.sh
 - [alacritty](https://github.com/alacritty/alacritty)
 - [starship](https://github.com/starship/starship)
 - [neovim](https://github.com/neovim/neovim)
+- [Rectangle](https://github.com/rxhanson/Rectangle)

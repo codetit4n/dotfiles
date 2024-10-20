@@ -1,0 +1,43 @@
+[colors.primary]
+background = "#000000"
+foreground = "#d7d9db"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 17.0
+
+[font.bold]
+family = "MesloLGS NF"
+
+[font.bold_italic]
+family = "MesloLGS NF"
+
+[font.italic]
+family = "MesloLGS NF"
+
+[font.normal]
+family = "MesloLGS NF"
+
+[[keyboard.bindings]]
+chars = "\u001BF"
+key = "Right"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001BB"
+key = "Left"
+mods = "Alt"
+
+[window]
+dynamic_title = true
+opacity = 0.95
+option_as_alt = "Both"
+
+[window.dimensions]
+columns = 120
+lines = 38
+
+[window.padding]
+x = 5

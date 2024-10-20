@@ -16,9 +16,6 @@ sh sync.sh
 
 ### Tools I use
 
-- [yabai](https://github.com/koekeishiya/yabai)
-- [skhd](https://github.com/koekeishiya/skhd)
-- [zsh](https://github.com/ohmyzsh/ohmyzsh/)
 - [tmux](https://github.com/tmux/tmux)
 - [alacritty](https://github.com/alacritty/alacritty)
 - [starship](https://github.com/starship/starship)

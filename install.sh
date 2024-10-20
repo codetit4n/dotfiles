@@ -7,7 +7,7 @@ src_dir="$PWD"
 dest_dir="$HOME"
 
 # Exclude files
-exclude_files=(.git .gitignore .gitmodules install.sh README.md LICENSE .config .DS_Store)
+exclude_files=(.git .gitignore .gitmodules install.sh sync.sh README.md LICENSE .config .DS_Store)
 
 # Install files
 for file in $(ls -A $src_dir); do

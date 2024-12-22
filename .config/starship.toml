@@ -4,9 +4,12 @@
 # Inserts a blank line between shell prompts
 add_newline = false
 
+# Set command timeout to 10 minutes (600,000 milliseconds)
+command_timeout = 600000
+
 [character] # The name of the module we are configuring is 'character'
-success_symbol = '[➜](bold green)' 
-error_symbol = '[x](bold red)' 
+success_symbol = '[➜](bold green)'
+error_symbol = '[x](bold red)'
 
 [aws]
 symbol = "  "
@@ -199,3 +202,4 @@ disabled = false
 
 [cmd_duration]
 format = '. [$duration](bold yellow)'
+

@@ -60,6 +60,7 @@ abbr tl "tmux ls"
 
 abbr ssh-start 'sudo systemctl start sshd.service'
 abbr ssh-stop 'sudo systemctl stop sshd.service'
+abbr torrent 'aria2c'
 
 abbr docker-start 'sudo systemctl start docker.service'
 abbr docker-stop 'sudo systemctl stop docker.service'

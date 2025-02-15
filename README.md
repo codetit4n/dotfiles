@@ -16,8 +16,10 @@ sh sync.sh
 
 ### Tools I use
 
+- [yabai](https://github.com/koekeishiya/yabai)
+- [skhd](https://github.com/koekeishiya/skhd)
+- [fish](https://github.com/fish-shell/fish-shell)
 - [tmux](https://github.com/tmux/tmux)
 - [alacritty](https://github.com/alacritty/alacritty)
 - [starship](https://github.com/starship/starship)
 - [neovim](https://github.com/neovim/neovim)
-- [Rectangle](https://github.com/rxhanson/Rectangle)

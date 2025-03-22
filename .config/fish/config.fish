@@ -24,6 +24,8 @@ alias aptos "~/bin/aptos"
 
 alias todo "tmux new -s todo 'nvim ~/dev/todo.txt'"
 
+alias bmake "bear -- make"
+
 # tmux sessionizer
 bind \cf "~/.config/scripts/tmux-sessionizer"
 
@@ -33,14 +35,15 @@ alias tm "tmux new -s \"\$(basename \"\$(pwd)\" | sed 's#.*/##')\""
 alias tnv "tmux new -s (basename (pwd) | sed 's#.*/##') 'nvim .; fish'"
 
 
-alias gitlync "git config user.name \"codetit4n\" && git config user.email \"lokesh@lync.world\""
+alias gitlync "git config user.name \"Lokesh Kumar <codetit4n>\" && git config user.email \"lokesh@lync.world\""
 
 set -gx EDITOR /usr/bin/nvim
 set -gx GIT_EDITOR /usr/bin/nvim
 set -gx PATH $PATH $HOME/.cargo/bin
 set -gx PATH $PATH $HOME/go/bin
-
 set -gx PATH $PATH $HOME/.local/bin
+set -gx PICO_SDK_PATH $HOME/pico/pico-sdk
+set -gx PICO_TOOLCHAIN_PATH /usr
 
 abbr ls 'exa'
 abbr l 'exa'
@@ -50,9 +53,6 @@ abbr la 'exa -la'
 abbr e 'exit'
 
 abbr cd 'z'
-
-abbr cat 'bat'
-abbr bat 'cat'
 
 # tmux
 abbr ta "tmux attach"

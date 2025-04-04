@@ -4,7 +4,7 @@
     ### Display ###
 
     # Which monitor should the notifications be displayed on.
-    monitor = 0
+    monitor = 1
 
     # Display notification on focused monitor.  Possible modes are:
     #   mouse: follow mouse pointer
@@ -24,16 +24,16 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 300
+    width = 350
 
     # The maximum height of a single notification, excluding the frame.
-    height = 250
+    height = (0, 250)
 
     # Position the notification in the top right corner
-    origin = top-right
+    origin = top-left
 
     # Offset from the origin
-    offset = 10x50
+    offset = (15, 15)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -164,7 +164,8 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "%a\n<b>%s</b>\n%b"
+
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -193,7 +194,7 @@
     hide_duplicate_count = false
 
     # Display indicators for URLs (U) and actions (A).
-    show_indicators = yes
+    show_indicators = no
 
     ### Icons ###
 
@@ -235,7 +236,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/xdg-open
+    browser = /usr/bin/browser-select
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -296,7 +297,7 @@
     # * context_all: Open context menu for all notifications.
     # These values can be strung together for each mouse event, and
     # will be executed in sequence.
-    mouse_left_click = close_current
+    mouse_left_click = open_url, close_current
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
 
@@ -317,6 +318,7 @@
     background = "#24273A"
     foreground = "#CAD3F5"
     timeout = 8
+    format = "<span color='#A6DA95'>• </span>%a\n<b>%s</b>\n%b"
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
@@ -324,6 +326,7 @@
     background = "#24273A"
     foreground = "#CAD3F5"
     timeout = 10
+    format = "%a\n<b>%s</b>\n%b"
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
@@ -332,6 +335,7 @@
     foreground = "#CAD3F5"
     frame_color = "#F5A97F"
     timeout = 0
+    format = "<span color='#F38BA8'><b>! </b></span>%a\n<b>%s</b>\n%b"
     # Icon for notifications with critical urgency, uncomment to enable
     #default_icon = /path/to/icon
 

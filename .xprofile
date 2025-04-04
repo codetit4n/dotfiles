@@ -1,1 +1,14 @@
-xrandr --output DP-0 --mode 1920x1080 --rate 165
+# Set DPI and primary monitor settings
+xrandr --dpi 192 \
+  --output DP-0 --primary --mode 3840x2160 --rate 180 --pos 0x0 --rotate normal \
+  --output HDMI-1 --mode 1920x1080 --rate 120 --scale 1.5x1.5 --rotate left --right-of DP-0
+
+# Merge Xresources
+xrdb -merge ~/.Xresources
+
+# Scaling settings for GTK and Qt
+export GDK_SCALE=1
+export GDK_DPI_SCALE=1
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_SCREEN_SCALE_FACTORS="DP-0=2;HDMI-1=1"
+

@@ -54,6 +54,10 @@ abbr e 'exit'
 
 abbr cd 'z'
 
+abbr dsp1-off 'xrandr --output DP-0 --off'
+abbr dsp2-off 'xrandr --output HDMI-1 --off'
+abbr dsp-reset 'source ~/.xprofile'
+
 # tmux
 abbr ta "tmux attach"
 abbr tl "tmux ls"

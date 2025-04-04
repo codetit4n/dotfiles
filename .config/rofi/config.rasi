@@ -1,1 +1,7 @@
-@theme "Arc-Dark"
+@theme "sidebar"
+
+configuration {
+  dpi: 192;
+  font: "monospace 13";
+}
+

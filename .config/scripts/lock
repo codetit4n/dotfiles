@@ -33,4 +33,4 @@ VERIFYING='#10c76b'
 --indicator                  \
 --time-str="%I:%M %p"        \
 --date-str="%A, %b %d"       \
--i ~/Pictures/tech2.jpg
+-i ~/Pictures/space11.jpg

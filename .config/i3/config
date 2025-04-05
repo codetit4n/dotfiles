@@ -226,7 +226,7 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $sup+r mode "resize"
 
 # Window Colors
 set $bgcolor 	#7b7272

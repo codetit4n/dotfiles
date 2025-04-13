@@ -280,8 +280,11 @@ exec_always --no-startup-id sh -c 'nitrogen --set-zoom-fill --head=0 ~/Pictures/
 
 
 
-# Keybinding for i3lock
-bindsym $mod+x exec ~/.config/scripts/lock
+#lock
+bindsym $mod+x exec --no-startup-id xsecurelock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- xsecurelock
+
+
 
 # Assign programs to Workspaces
 for_window [class="Slack"] move to workspace $ws6

@@ -8,7 +8,7 @@ WRONG='#d9021b'
 VERIFYING='#10c76b'
 
 # Pause Dunst
-pkill -SIGUSR1 dunst
+pkill -9 dunst
 
 # Lock the screen
 /usr/bin/i3lock \
@@ -40,5 +40,4 @@ pkill -SIGUSR1 dunst
 -i ~/Pictures/space11.jpg
 
 # Resume Dunst after unlocking
-pkill -SIGUSR2 dunst
-
+dunst &

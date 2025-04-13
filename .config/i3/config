@@ -29,6 +29,11 @@ exec --no-startup-id thunderbird
 exec --no-startup-id whatsdesk
 exec --no-startup-id spotify
 
+exec --no-startup-id ~/.config/scripts/track-workspace.sh
+
+
+
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 

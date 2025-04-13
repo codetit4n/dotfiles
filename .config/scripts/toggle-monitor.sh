@@ -1,21 +1,15 @@
 #!/bin/bash
 
-# Get the currently focused workspace number
-current_ws=$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).name')
+# Get current workspace name
+current_ws=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused).name')
 
-# Remove quotes
-current_ws=${current_ws//\"/}
+# Get previous workspace (the one that was focused before the current)
+prev_ws=$(i3-msg -t get_workspaces | jq -r '.[] | select(.visible==true and .focused==false).name')
 
-# Toggle between current and workspace 10
-if [ "$current_ws" == "10" ]; then
-  # Go back to previous workspace stored in a temp file
-  if [ -f /tmp/i3-prev-ws ]; then
-    prev_ws=$(cat /tmp/i3-prev-ws)
-    i3-msg workspace "$prev_ws"
-  fi
+if [ "$current_ws" = "10" ]; then
+  # Go back to previous workspace
+  i3-msg "workspace $prev_ws"
 else
-  # Save current workspace and switch to 10
-  echo "$current_ws" > /tmp/i3-prev-ws
-  i3-msg workspace "10"
+  i3-msg "workspace 10"
 fi
 

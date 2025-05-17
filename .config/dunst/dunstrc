@@ -33,7 +33,7 @@
     origin = top-left
 
     # Offset from the origin
-    offset = (15, 15)
+    offset = (15, 38)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0

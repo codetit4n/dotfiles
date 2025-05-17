@@ -20,3 +20,6 @@ xinput set-prop "$DEVICE_ID" "libinput Click Method Enabled" 0 1         # butto
 xinput set-prop "$DEVICE_ID" "libinput Scrolling Pixel Distance" 50
 xinput set-prop "$DEVICE_ID" "libinput Accel Speed" 0.25
 
+pkill libinput-gestures 2>/dev/null
+sleep 1
+libinput-gestures &

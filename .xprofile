@@ -2,8 +2,9 @@
 
 # Set DPI and primary monitor settings
 xrandr --dpi 192 \
-  --output DP-0 --primary --mode 3840x2160 --rate 180 --pos 0x0 --rotate normal \
-  --output HDMI-1 --mode 1920x1080 --rate 120 --scale 1.5x1.5 --rotate left --right-of DP-0
+  --output DP-0 --primary --mode 3840x2160 --rate 180 --rotate normal --pos 0x330 \
+  --output HDMI-1 --mode 1920x1080 --rate 120 --scale 1.5x1.5 --rotate left --pos 3840x0
+
 
 # Set brightness after display init
 (sleep 5 && bash ~/.config/scripts/brightness.sh 1 87) &

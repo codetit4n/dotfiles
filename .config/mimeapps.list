@@ -17,7 +17,7 @@ image/png=feh.desktop
 image/jpeg=feh.desktop
 
 [Added Associations]
-image/jpeg=org.nomacs.ImageLounge.desktop;org.cubocore.CoreImage.desktop;feh.desktop;ida.desktop;
+image/jpeg=cc.cubocore.CoreImage.desktop;org.nomacs.ImageLounge.desktop;org.cubocore.CoreImage.desktop;feh.desktop;ida.desktop;
 image/png=org.nomacs.ImageLounge.desktop;org.kde.kolourpaint.desktop;cc.cubocore.CoreImage.desktop;org.cubocore.CoreImage.desktop;feh.desktop;
 x-scheme-handler/mailto=userapp-Thunderbird-31UKH2.desktop;userapp-Thunderbird-PRW3J2.desktop;userapp-Thunderbird-8KLAZ2.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-31UKH2.desktop;userapp-Thunderbird-PRW3J2.desktop;userapp-Thunderbird-8KLAZ2.desktop;

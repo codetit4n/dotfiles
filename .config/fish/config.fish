@@ -23,6 +23,7 @@ alias oss "cd ~/oss"
 alias aptos "~/bin/aptos"
 
 alias todo "tmux new -s todo 'nvim ~/dev/todo.txt'"
+alias dsa "tmux new -s dsa 'nvim ~/dev/dsa.txt'"
 
 alias bmake "bear -- make"
 

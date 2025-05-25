@@ -30,3 +30,4 @@ application/pkix-cert=sublime_text.desktop;
 application/vnd.apple.keynote=sublime_text.desktop;
 x-scheme-handler/tonsite=org.telegram.desktop.desktop;
 text/html=sublime_text.desktop;
+video/mp4=vlc.desktop;

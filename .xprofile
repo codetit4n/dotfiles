@@ -19,15 +19,3 @@ export GDK_DPI_SCALE=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_SCREEN_SCALE_FACTORS="DP-0=2;HDMI-1=1"
 
-# Wait for Magic Trackpad and apply settings
-(
-  while true; do
-    DEVICE_ID=$(xinput list | grep "Apple Inc. Magic Trackpad 2" | grep -o 'id=[0-9]*' | cut -d= -f2)
-    if [ -n "$DEVICE_ID" ]; then
-      bash ~/.config/scripts/trackpad-setup.sh
-      break
-    fi
-    sleep 1
-  done
-) &
-

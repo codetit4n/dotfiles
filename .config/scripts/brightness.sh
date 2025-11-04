@@ -29,7 +29,7 @@ set_brightness() {
     MAX=$(echo "$OUTPUT" | awk -F '=' '/max value/ {gsub(/,/, "", $3); print $3}' | awk '{print $1}')
 
     if [[ -z "$MAX" ]]; then
-        dunstify -a "" -r "999$DISPLAY" "❌ Failed to read brightness for display $DISPLAY"
+        dunstify -a "Brightness" -r "999$DISPLAY" "❌ Failed to read brightness for display $DISPLAY"
         exit 1
     fi
 

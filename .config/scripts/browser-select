@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Display a dialog to select a browser
+# Show chooser
 browser=$(yad --title="Select Browser" \
               --image="web-browser" \
               --text="Choose a browser" \
@@ -14,20 +14,29 @@ browser=$(yad --title="Select Browser" \
 
 case $? in
     2)
-        /usr/bin/brave-beta --password-store=basic "$1" &
+        if [[ -n "$1" ]]; then
+            /usr/bin/brave-beta --password-store=basic "$1" &
+        else
+            /usr/bin/brave-beta --password-store=basic &
+        fi
         ;;
     3)
-        /usr/bin/brave --password-store=basic "$1" &
+        if [[ -n "$1" ]]; then
+            /usr/bin/firefox-developer-edition "$1" &
+        else
+            /usr/bin/firefox-developer-edition &
+        fi
         ;;
     4)
-        /usr/bin/chromium "$1" &
+        if [[ -n "$1" ]]; then
+            /usr/bin/chromium "$1" &
+        else
+            /usr/bin/chromium &
+        fi
         ;;
     *)
-        # User canceled the dialog
         echo "Operation canceled."
         ;;
 esac
 
 exit 0
-
-

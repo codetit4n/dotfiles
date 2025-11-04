@@ -200,12 +200,12 @@ bindsym $mod+Shift+e move container to workspace number $ws10
 # screenshot
 bindsym $sup+s exec bash -c 'mkdir -p ~/Pictures/Screenshots && maim -s ~/Pictures/Screenshots/Screenshot-$(date +%s).png && notify-send -a "maim" "Screenshot 📸" "Saved to ~/Pictures/Screenshots"'
 
+# screenshot tmp
+#bindsym $sup+s exec bash -c 'mkdir -p ~/Videos/obs/lync_kt_acks && maim -s ~/Videos/obs/lync_kt_acks/Screenshot-$(date +%s).png && notify-send -a "maim" "Screenshot 📸" "Saved to ~/Pictures/Screenshots"'
+
+
 # screen recording
 bindsym $sup+Shift+s exec --no-startup-id "$HOME/.config/scripts/record_region.sh"
-
-
-# clipboard manager
-bindsym $mod+v exec diodon
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -282,15 +282,16 @@ client.urgent		    $ubgcolor	$ubgcolor		$textcolor	$ubgcolor
 # hide the title bar
 for_window [class="^.*"] border pixel 3
 
+for_window [window_role="GtkFileChooserDialog"] floating enable, resize set 1600 1500, move position center
+
 
 # Display wallpaper
-exec_always --no-startup-id sh -c 'nitrogen --set-zoom-fill --head=0 ~/Pictures/miyamoto1.jpg && nitrogen --set-zoom --head=1 ~/Pictures/linux9.jpg'
+exec_always --no-startup-id sh -c 'nitrogen --set-zoom-fill --head=0 ~/Pictures/space13.jpg && nitrogen --set-zoom --head=1 ~/Pictures/linux9.jpg'
 
 
 
-#lock
-bindsym $mod+x exec --no-startup-id xsecurelock
-exec --no-startup-id xss-lock --transfer-sleep-lock -- xsecurelock
+bindsym $mod+x exec ~/.config/scripts/lock
+
 
 
 
@@ -304,11 +305,12 @@ for_window [class="Yad"] floating enable
 # Window Compositor
 exec_always picom -f
 
+# clipboard tool
+exec --no-startup-id greenclip daemon>/dev/null
+bindsym $mod+c exec --no-startup-id ~/.config/scripts/clipboard.sh
 
 # Polybar launch script
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
-# clipboard tool
-exec --no-startup-id greenclip daemon>/dev/null
-bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard
+
 

@@ -1,43 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 
-BLANK='#00000000'
-CLEAR='#ffffff22'
-DEFAULT='#47e2f240'
-TEXT='#fafafaFF'
-WRONG='#d9021b'
-VERIFYING='#10c76b'
+# Path to wallpaper (change this if you want a different one)
+#WALLPAPER="$HOME/Pictures/space14.jpg"
+#
+## Update lock screen background (only needed once unless wallpaper changes)
+#betterlockscreen -u "$WALLPAPER"
 
-# Pause Dunst
-pkill -9 dunst
+# Pause notifications (dunst)
+pkill -u "$USER" -USR1 dunst
 
-# Lock the screen
-/usr/bin/i3lock \
---insidever-color=$CLEAR     \
---ringver-color=$VERIFYING   \
-\
---insidewrong-color=$CLEAR   \
---ringwrong-color=$WRONG     \
-\
---inside-color=$BLANK        \
---ring-color=$DEFAULT        \
---line-color=$BLANK          \
---separator-color=$DEFAULT   \
-\
---verif-color=$TEXT          \
---wrong-color=$TEXT          \
---time-color=$TEXT           \
---date-color=$TEXT           \
---layout-color=$TEXT         \
---keyhl-color=$VERIFYING     \
---bshl-color=$WRONG          \
-\
---screen 1                   \
---blur 5                     \
---clock                      \
---indicator                  \
---time-str="%I:%M %p"        \
---date-str="%A, %b %d"       \
--i ~/Pictures/space11.jpg
+# Lock the screen with blur
+betterlockscreen -l dimblur --time-format "%I:%M %p"
 
-# Resume Dunst after unlocking
-dunst &
+# Resume notifications after unlock
+pkill -u "$USER" -USR2 dunst

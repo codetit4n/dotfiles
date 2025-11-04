@@ -15,15 +15,22 @@ alias nvimy "cd ~/.config/nvim"
 
 alias dotfiles "cd ~/dotfiles"
 alias dev "cd ~/dev"
+alias nav "cd ~/navikarana"
 alias learn "cd ~/learning"
-alias lync "cd ~/lync"
 alias oss "cd ~/oss"
 
 
-alias aptos "~/bin/aptos"
+alias todo "tmux new -s todo 'nvim ~/dev/txts/todo.txt'"
+alias track "tmux new -s track-progress 'nvim ~/dev/txts/track.txt'"
+alias streak "tmux new -s streak 'nvim ~/dev/txts/streak.txt'"
+alias note "tmux new -s note 'nvim ~/dev/txts/note.txt'"
+alias dmp "tmux new -s data-dump 'nvim ~/dev/txts/dump.txt'"
+alias now "tmux new -s now 'nvim ~/dev/txts/now.txt'"
+alias idea "xdg-open https://ideas.navikarana.io"
+alias smallidea "xdg-open https://smallideas.navikarana.io"
 
-alias todo "tmux new -s todo 'nvim ~/dev/todo.txt'"
-alias dsa "tmux new -s dsa 'nvim ~/dev/dsa.txt'"
+
+alias copilot "nv ~/dev/txts/note.txt +CopilotChat"
 
 alias bmake "bear -- make"
 
@@ -35,8 +42,16 @@ alias tm "tmux new -s \"\$(basename \"\$(pwd)\" | sed 's#.*/##')\""
 # tmux session with nvim
 alias tnv "tmux new -s (basename (pwd) | sed 's#.*/##') 'nvim .; fish'"
 
+alias website 'tmux new-session -d -s personal-website "cd ~/personal-website; nvim .; fish" \; new-window -n hugo "cd ~/personal-website; hugo server; fish" \; select-window -t 1 \; attach-session -t personal-website'
 
-alias gitlync "git config user.name \"Lokesh Kumar <codetit4n>\" && git config user.email \"lokesh@lync.world\""
+alias web lynx
+
+
+alias gitn "git config user.name \"Lokesh Kumar <codetit4n>\" && git config user.email \"lokesh@navikarana.io\""
+
+alias set-brightness ~/.config/scripts/brightness.sh
+
+alias idf ". /home/tit4n/esp/esp-idf/export.fish"
 
 set -gx EDITOR /usr/bin/nvim
 set -gx GIT_EDITOR /usr/bin/nvim
@@ -45,6 +60,9 @@ set -gx PATH $PATH $HOME/go/bin
 set -gx PATH $PATH $HOME/.local/bin
 set -gx PICO_SDK_PATH $HOME/pico/pico-sdk
 set -gx PICO_TOOLCHAIN_PATH /usr
+set -eg PATH
+
+
 
 abbr ls 'exa'
 abbr l 'exa'
@@ -63,16 +81,19 @@ abbr dsp-reset 'bass source ~/.xprofile'
 abbr ta "tmux attach"
 abbr tl "tmux ls"
 
-abbr ssh-start 'sudo systemctl start sshd.service'
-abbr ssh-stop 'sudo systemctl stop sshd.service'
+abbr sshd-start 'sudo systemctl start sshd.service'
+abbr sshd-stop 'sudo systemctl stop sshd.service'
 abbr torrent 'aria2c'
 
 abbr docker-start 'sudo systemctl start docker.service'
 abbr docker-stop 'sudo systemctl stop docker.service'
 
+abbr csh 'builtin history clear-session'
+
 zoxide init fish | source
 
 starship init fish | source
+
 
 # pnpm
 set -gx PNPM_HOME "/home/tit4n/.local/share/pnpm"
@@ -93,3 +114,10 @@ export PATH="$HOME/.fuelup/bin:$PATH"
 set -gx ANDROID_HOME $HOME/Android/Sdk
 set -gx PATH $PATH $ANDROID_HOME/emulator
 set -gx PATH $PATH $ANDROID_HOME/platform-tools
+set -U fish_user_paths $ANDROID_HOME/cmdline-tools/latest/bin $fish_user_paths
+
+
+nvm use default --silent > /dev/null
+
+alias restartlogid="sudo systemctl restart logid"
+

@@ -6,7 +6,7 @@ foreground = "#d7d9db"
 size = 12
 
 [font.normal]
-family = "0xProto Nerd Font Propo"
+family = "0xProto Nerd Font"
 style = "Regular"
 
 [window]

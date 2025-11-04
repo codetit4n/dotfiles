@@ -1,0 +1,12 @@
+* {
+  background: #1e1e2e;
+  border-color: #89b4fa;
+  border: 1;
+  padding: 4;
+  text-color: #cdd6f4;
+}
+
+window {
+  width: 30%;
+}
+

@@ -21,11 +21,12 @@ alias oss "cd ~/oss"
 
 
 alias todo "tmux new -s todo 'nvim ~/dev/txts/todo.txt'"
+alias rnd "tmux new -s R&D 'nvim ~/dev/txts/rnd.txt'"
 alias track "tmux new -s track-progress 'nvim ~/dev/txts/track.txt'"
-alias streak "tmux new -s streak 'nvim ~/dev/txts/streak.txt'"
 alias note "tmux new -s note 'nvim ~/dev/txts/note.txt'"
 alias dmp "tmux new -s data-dump 'nvim ~/dev/txts/dump.txt'"
-alias now "tmux new -s now 'nvim ~/dev/txts/now.txt'"
+alias later "tmux new -s later 'nvim ~/dev/txts/later.txt'"
+alias rice "tmux new -s rice 'nvim ~/dev/txts/ricing.txt'"
 alias idea "xdg-open https://ideas.navikarana.io"
 alias smallidea "xdg-open https://smallideas.navikarana.io"
 
@@ -43,6 +44,7 @@ alias tm "tmux new -s \"\$(basename \"\$(pwd)\" | sed 's#.*/##')\""
 alias tnv "tmux new -s (basename (pwd) | sed 's#.*/##') 'nvim .; fish'"
 
 alias website 'tmux new-session -d -s personal-website "cd ~/personal-website; nvim .; fish" \; new-window -n hugo "cd ~/personal-website; hugo server; fish" \; select-window -t 1 \; attach-session -t personal-website'
+alias logs 'tmux new-session -d -s personal-logs "cd ~/dev/personal-web/personal-logs; nvim .; fish" \; new-window -n hugo "cd ~/dev/personal-web/personal-logs; hugo server; fish" \; select-window -t 1 \; attach-session -t personal-logs'
 
 alias web lynx
 
@@ -52,6 +54,7 @@ alias gitn "git config user.name \"Lokesh Kumar <codetit4n>\" && git config user
 alias set-brightness ~/.config/scripts/brightness.sh
 
 alias idf ". /home/tit4n/esp/esp-idf/export.fish"
+alias zephyr "source ~/.config/scripts/zephyr-env.fish"
 
 set -gx EDITOR /usr/bin/nvim
 set -gx GIT_EDITOR /usr/bin/nvim

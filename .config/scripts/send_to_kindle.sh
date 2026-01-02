@@ -1,14 +1,10 @@
 #!/bin/bash
 
-# Script to convert a webpage to PDF and email it to a Kindle device
-# Requires: wkhtmltopdf, mailutils
 # Usage: ./send_to_kindle.sh <url> [optional_custom_filename]
-# Not in use anymore - Here for reference only
-# Author: codetit4n (https://github.com/codetit4n)
 
 URL="$1"
 CUSTOM_NAME="$2"
-EMAIL="Your Kindle Email Address Here"
+EMAIL="readlokesh@kindle.com"
 DEST_FOLDER="$HOME/Downloads/kindle_pdfs"
 
 # Validate URL input

@@ -1,0 +1,43 @@
+# Base style
+BasedOnStyle: LLVM
+Language: C
+
+# --- Indentation ---
+UseTab: Always            # Use tabs, not spaces
+IndentWidth: 8            # Logical indentation width
+TabWidth: 8               # Visual width of a tab
+ContinuationIndentWidth: 8
+
+# --- Alignment ---
+AlignAfterOpenBracket: Align
+AlignOperands: true
+AlignTrailingComments: true
+
+# --- Braces ---
+BreakBeforeBraces: Attach
+
+# --- Line breaking ---
+ColumnLimit: 100
+
+# --- Spacing ---
+SpaceBeforeParens: ControlStatements
+SpaceAfterCStyleCast: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+SpacesInAngles: false
+
+# --- Pointers ---
+PointerAlignment: Left    # int *ptr
+
+# --- Short constructs ---
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+
+# --- Includes ---
+SortIncludes: true
+IncludeBlocks: Preserve
+
+# --- Comments ---
+ReflowComments: true
+

@@ -4,9 +4,9 @@
 browser=$(yad --title="Select Browser" \
               --image="web-browser" \
               --text="Choose a browser" \
-              --button="Personal":2 \
-              --button="Work":3 \
-              --button="Extra":4 \
+              --button="Brave":2 \
+              --button="Firefox":3 \
+              --button="Chromium":4 \
               --button="(x)":1 \
               --width=350 \
               --height=120 \

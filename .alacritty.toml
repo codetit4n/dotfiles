@@ -3,7 +3,7 @@ background = "#000000"
 foreground = "#d7d9db"
 
 [font]
-size = 12
+size = 10.7
 
 [font.normal]
 family = "0xProto Nerd Font"
@@ -15,7 +15,7 @@ opacity = 0.85
 
 [window.dimensions]
 columns = 98
-lines = 25
+lines = 30
 
 [window.padding]
 x = 5

@@ -3,7 +3,7 @@ function fish_greeting
     #echo "Welcome back, Lokesh"
 end
 
-if test -f /home/lokesh/.autojump/share/autojump/autojump.fish; . /home/lokesh/.autojump/share/autojump/autojump.fish; end
+if test -f /home/tit4n/.autojump/share/autojump/autojump.fish; . /home/tit4n/.autojump/share/autojump/autojump.fish; end
 
 alias nv "nvim"
 alias fishy "tmux new -s \"fish-config\" 'nvim ~/.config/fish/config.fish'"
@@ -24,6 +24,7 @@ alias todo "tmux new -s todo 'nvim ~/dev/txts/todo.txt'"
 alias rnd "tmux new -s R&D 'nvim ~/dev/txts/rnd.txt'"
 alias track "tmux new -s track-progress 'nvim ~/dev/txts/track.txt'"
 alias note "tmux new -s note 'nvim ~/dev/txts/note.txt'"
+alias now "tmux new -s now 'nvim ~/dev/txts/now1.txt'"
 alias dmp "tmux new -s data-dump 'nvim ~/dev/txts/dump.txt'"
 alias later "tmux new -s later 'nvim ~/dev/txts/later.txt'"
 alias rice "tmux new -s rice 'nvim ~/dev/txts/ricing.txt'"
@@ -31,7 +32,7 @@ alias idea "xdg-open https://ideas.navikarana.io"
 alias smallidea "xdg-open https://smallideas.navikarana.io"
 
 
-alias copilot "nv ~/dev/txts/note.txt +CopilotChat"
+alias copilot 'nvim ~/dev/txts/copilot_notes/copilot_(date "+%Y%m%d_%H%M%S").txt +CopilotChat'
 
 alias bmake "bear -- make"
 
@@ -43,7 +44,7 @@ alias tm "tmux new -s \"\$(basename \"\$(pwd)\" | sed 's#.*/##')\""
 # tmux session with nvim
 alias tnv "tmux new -s (basename (pwd) | sed 's#.*/##') 'nvim .; fish'"
 
-alias website 'tmux new-session -d -s personal-website "cd ~/personal-website; nvim .; fish" \; new-window -n hugo "cd ~/personal-website; hugo server; fish" \; select-window -t 1 \; attach-session -t personal-website'
+alias website 'tmux new-session -d -s personal-website "cd ~/personal-website; nvim .; fish" \; new-window -n hugo "cd ~/personal-website; hugo server -D; fish" \; select-window -t 1 \; attach-session -t personal-website'
 alias logs 'tmux new-session -d -s personal-logs "cd ~/dev/personal-web/personal-logs; nvim .; fish" \; new-window -n hugo "cd ~/dev/personal-web/personal-logs; hugo server; fish" \; select-window -t 1 \; attach-session -t personal-logs'
 
 alias web lynx
@@ -93,9 +94,13 @@ abbr docker-stop 'sudo systemctl stop docker.service'
 
 abbr csh 'builtin history clear-session'
 
+abbr bmakedbg 'bmake 2>&1 | grep --color=always -E "error|warning|undefined reference|dangerous relocation|collect2"'
+
 zoxide init fish | source
 
 starship init fish | source
+
+source $HOME/.elan/env
 
 
 # pnpm
@@ -123,4 +128,12 @@ set -U fish_user_paths $ANDROID_HOME/cmdline-tools/latest/bin $fish_user_paths
 nvm use default --silent > /dev/null
 
 alias restartlogid="sudo systemctl restart logid"
+alias mailrestart='pkill thunderbird; nohup thunderbird >/dev/null 2>&1 & disown'
+function clipboardrestart
+    pkill copyq
+    env QT_SCALE_FACTOR=2.5 setsid -f copyq
+end
 
+
+# opencode
+fish_add_path /home/tit4n/.opencode/bin

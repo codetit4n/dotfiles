@@ -9,7 +9,7 @@ TabWidth: 8               # Visual width of a tab
 ContinuationIndentWidth: 8
 
 # --- Alignment ---
-AlignAfterOpenBracket: Align
+AlignAfterOpenBracket: DontAlign
 AlignOperands: true
 AlignTrailingComments: true
 
@@ -41,3 +41,7 @@ IncludeBlocks: Preserve
 # --- Comments ---
 ReflowComments: true
 
+BinPackParameters: false
+BinPackArguments: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowAllArgumentsOnNextLine: false

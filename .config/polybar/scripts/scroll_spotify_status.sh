@@ -1,13 +1,56 @@
 #!/bin/bash
 
-# see man zscroll for documentation of the following parameters
-zscroll -l 30 \
-        --delay 0.1 \
-        --scroll-padding "  " \
-        --match-command "`dirname $0`/get_spotify_status.sh --status" \
-        --match-text "Playing" "--scroll 1" \
-        --match-text "Paused" "--scroll 0" \
-        --update-check true "`dirname $0`/get_spotify_status.sh" &
+SCRIPT_DIR="$(dirname "$0")"
+MAX_LEN=60
+FRAME_DELAY=0.12
 
-wait
+FRAMES=(
+    "▂▄"
+    "▄▆"
+    "▆█"
+    "█▆"
+    "▆▄"
+    "▄▂"
+)
 
+truncate_text() {
+    local text="$1"
+    local max="$2"
+
+    if (( ${#text} > max )); then
+        printf '%s...' "${text:0:$((max - 3))}"
+    else
+        printf '%s' "$text"
+    fi
+}
+
+while true; do
+    status="$("$SCRIPT_DIR/get_spotify_status.sh" --status)"
+
+    if [[ "$status" == "Playing" ]]; then
+        text=$(playerctl --player=spotify metadata --format '{{ title }} - {{ artist }}' 2>/dev/null)
+
+        text=$(truncate_text "$text" $((MAX_LEN - 5)))
+
+        for frame in "${FRAMES[@]}"; do
+            current_status=$(playerctl --player=spotify status 2>/dev/null)
+
+            [[ "$current_status" != "Playing" ]] && break
+
+            printf '%s %s 󰓇 \n' "$frame" "$text"
+            sleep "$FRAME_DELAY"
+        done
+
+    elif [[ "$status" == "Paused" ]]; then
+        text=$(playerctl --player=spotify metadata --format '{{ title }} - {{ artist }}' 2>/dev/null)
+        text=$(truncate_text "$text" $((MAX_LEN - 5)))
+
+        printf ' %s 󰓇 \n' "$text"
+
+        sleep 0.25
+
+    else
+        printf '\n'
+        sleep 1
+    fi
+done

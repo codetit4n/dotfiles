@@ -3,7 +3,7 @@ background = "#000000"
 foreground = "#d7d9db"
 
 [font]
-size = 10.7
+size = 9
 
 [font.normal]
 family = "0xProto Nerd Font"

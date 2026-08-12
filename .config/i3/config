@@ -80,7 +80,7 @@ bindsym $mod+s exec "rofi -modi drun,run -show drun"
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # open calculator
-bindsym $sup+c exec "rofi -show calc -modi calc -no-show-match -no-sort"
+#bindsym $sup+c exec "rofi -show calc -modi calc -no-show-match -no-sort"
 
 # change focus
 bindsym $mod+h focus left
@@ -117,11 +117,18 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+Shift+s layout stacking
-bindsym $mod+Shift+t layout tabbed
-bindsym $mod+Shift+s layout toggle split
+#bindsym $mod+Shift+t layout tabbed
+#bindsym $mod+Shift+s layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+$sup+space floating toggle
+#bindsym $sup+f floating toggle
+# Toggle floating + enforce a consistent floating size + center
+bindsym $sup+f floating toggle, resize set width 2400 px height 1600 px, move position center
+
+bindsym $mod+Shift+Return fullscreen disable, floating disable, layout default, border pixel 3, unmark
+
+
+
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -195,7 +202,8 @@ bindsym $mod+Shift+e move container to workspace number $ws10
 
 
 # screenshot
-bindsym $sup+s exec bash -c 'mkdir -p ~/Pictures/Screenshots && maim -s ~/Pictures/Screenshots/Screenshot-$(date +%s).png && notify-send -a "maim" "Screenshot 📸" "Saved to ~/Pictures/Screenshots"'
+#bindsym $sup+s exec bash -c 'mkdir -p ~/Pictures/Screenshots; file=~/Pictures/Screenshots/Screenshot-$(date +%s).png; maim -s "$file" && xclip -selection clipboard -t image/png -i "$file" && notify-send -a "maim" "Screenshot 📸" "Saved and copied to clipboard"'
+bindsym $sup+s exec --no-startup-id ~/.config/scripts/screenshot.sh
 
 # screenshot tmp
 #bindsym $sup+s exec bash -c 'mkdir -p ~/Videos/obs/lync_kt_acks && maim -s ~/Videos/obs/lync_kt_acks/Screenshot-$(date +%s).png && notify-send -a "maim" "Screenshot 📸" "Saved to ~/Pictures/Screenshots"'
@@ -219,16 +227,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym l resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Right resize shrink width 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Left resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -271,16 +279,19 @@ client.urgent		    $ubgcolor	$ubgcolor		$textcolor	$ubgcolor
 #	}
 #}
 
-# hide the title bar
-for_window [class="^.*"] border pixel 3
+# Consistent borders everywhere
+default_border pixel 3
+default_floating_border pixel 3
+hide_edge_borders none
 
 for_window [window_role="GtkFileChooserDialog"] floating enable, resize set 1600 1500, move position center
+for_window [class="^copyq$"] move container to output HDMI-1, fullscreen enable
 
 
 # Display wallpaper
-exec_always --no-startup-id sh -c 'nitrogen --set-zoom-fill --head=0 ~/Pictures/wallpapers/normal2.jpg && nitrogen --set-zoom --head=1 ~/Pictures/wallpapers/linux9.jpg'
+exec_always --no-startup-id sh -c 'nitrogen --set-zoom-fill --head=0 ~/Pictures/wallpapers/tim-mossholder-2Ioi7wkj85U.jpg && nitrogen --set-zoom --head=1 ~/Pictures/wallpapers/arch2.jpg'
 
-bindsym $mod+x exec ~/.config/scripts/lock
+bindsym $mod+Shift+x exec ~/.config/scripts/lock
 
 # Assign programs to Workspaces
 for_window [class="Slack"] move to workspace $ws5
@@ -288,14 +299,17 @@ for_window [class="Spotify"] move to workspace $ws6
 for_window [class="whatsdesk"] move to workspace $ws7
 for_window [class="Thunderbird"] move to workspace $ws8
 for_window [class="Yad"] floating enable
+for_window [class="remarkable.exe"] floating disable
 
 # Window Compositor
 exec_always picom -f
 
-# clipboard tool
-exec --no-startup-id greenclip daemon>/dev/null
-bindsym $mod+c exec --no-startup-id ~/.config/scripts/clipboard.sh
-
 # Polybar launch script
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
+# Clipboard manager
+exec --no-startup-id env QT_SCALE_FACTOR=2.5 copyq
+bindsym $mod+c exec --no-startup-id copyq toggle
+
+# Open CopyQ on vertical monitor
+for_window [class="^copyq$"] move container to output HDMI-1

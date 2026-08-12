@@ -7,7 +7,7 @@ xrandr --dpi 192 \
 
 
 # Set brightness after display init
-(sleep 5 && bash ~/.config/scripts/brightness.sh 1 87) &
+(sleep 5 && bash ~/.config/scripts/brightness.sh 1 82) &
 (sleep 5 && bash ~/.config/scripts/brightness.sh 2 90) &
 
 # Merge Xresources

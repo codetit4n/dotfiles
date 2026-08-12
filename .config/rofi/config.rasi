@@ -1,7 +1,33 @@
-@theme "sidebar"
+//@theme "sidebar"
 
 configuration {
   dpi: 192;
   font: "monospace 13";
+  display-drun: " ";
 }
 
+//@theme "/usr/share/rofi/themes/dmenu.rasi"
+
+//@theme "/usr/share/rofi/themes/DarkBlue.rasi"
+
+//@theme "/usr/share/rofi/themes/fullscreen-preview.rasi"
+
+//@theme "/usr/share/rofi/themes/fancy2.rasi"
+
+//@theme "/usr/share/rofi/themes/solarized.rasi"
+
+//@theme "/usr/share/rofi/themes/android_notification.rasi"
+
+//@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
+
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+
+//@theme "/usr/share/rofi/themes/Arc.rasi"
+
+//@theme "/usr/share/rofi/themes/paper-float.rasi"
+
+//@theme "/usr/share/rofi/themes/gruvbox-light.rasi"
+
+@theme "/usr/share/rofi/themes/glue_pro_blue.rasi"

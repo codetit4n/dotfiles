@@ -23,3 +23,23 @@ sh sync.sh
 - [neovim](https://github.com/neovim/neovim)
 - [i3](https://i3wm.org/)
 - [polybar](https://github.com/polybar/polybar)
+
+### Screenshots
+
+I run a two monitor setup. Here are some screenshots:
+
+#### Main Monitor (Horizontal) - `3840x2160`
+
+- Polybar Zoomed:
+  ![Main Monitor Polybar](./assets/monitor-1-polybar.png)
+- Full Monitor:
+  ![Main Monitor](./assets/monitor-1.png)
+
+#### Secondary Monitor (Vertical) - `1920x1080`
+
+- Polybar Zoomed:
+  ![Secondary Monitor Polybar](./assets/monitor-2-polybar.png)
+- Full Monitor:
+  ![Secondary Monitor](./assets/monitor-2.png)
+
+You can find the wallpapers I use [here](./wallpapers).

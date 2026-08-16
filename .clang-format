@@ -1,6 +1,5 @@
 # Base style
 BasedOnStyle: LLVM
-Language: C
 
 # --- Indentation ---
 UseTab: Always            # Use tabs, not spaces

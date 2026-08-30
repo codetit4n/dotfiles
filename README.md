@@ -37,8 +37,10 @@ I run a two monitor setup. Here are some screenshots:
 
 #### Secondary Monitor (Vertical) - `1920x1080`
 
-- Polybar Zoomed:
-  ![Secondary Monitor Polybar](./assets/monitor-2-polybar.png)
+- Top Polybar Zoomed:
+  ![Secondary Monitor Top Polybar](./assets/monitor-2-polybar-1.png)
+- Bottom Polybar Zoomed:
+  ![Secondary Monitor Bottom Polybar](./assets/monitor-2-polybar-2.png)
 - Full Monitor:
   ![Secondary Monitor](./assets/monitor-2.png)
 

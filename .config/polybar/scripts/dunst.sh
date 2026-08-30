@@ -1,48 +1,106 @@
-#!/usr/bin/bash
-# 
-# Script to toogle dunst notification history
-#
-# Author : https://github.com/Crash-Zeus
+#!/usr/bin/env bash
 
+command="$1"
+amount="${2:-6}"
 
-readonly command=$1
-readonly maxDisplayNumber=$2
+display_history() {
+    local history
+    local entries
 
-function display_history {
-    history=$(dunstctl history)
-    
-    if [ "$maxDisplayNumber" != "" ] ; then
-        maxNumber=$maxDisplayNumber
-    else
-        maxNumber=$(echo $history | jq .'data[0] | length')
+    history="$(dunstctl history)"
+
+    entries="$(
+        echo "$history" |
+            jq -r '
+                .data[0][]
+                | [
+                    (.appname.data // "Unknown"),
+                    (.summary.data // ""),
+                    (.body.data // "")
+                  ]
+                | @tsv
+            ' |
+            head -n "$amount" |
+            awk -F '\t' '
+                {
+                    printf "%s — %s", $1, $2
+
+                    if ($3 != "") {
+                        printf "\n%s", $3
+                    }
+
+                    printf "\n\n"
+                }
+            '
+    )"
+
+    if [[ -z "$entries" ]]; then
+        entries="No notifications"
     fi
-    
-    for (( i=0; i< $maxNumber; i++ ))
-    do
-        id=$(echo $history | jq ."data[0][$i].id.data")
-        dunstctl history-pop $id
-    done
+
+    printf '%s\n' "$entries" |
+        rofi \
+            -dmenu \
+            -i \
+            -p "Notifications" \
+            -mesg "Last $amount notifications"
 }
 
-function close_history {
+status() {
+    local history_count
+
+    history_count="$(dunstctl count history)"
+
+    if (( history_count > 0 )); then
+        # Bright light blue bell + notification count
+        printf '%%{F#7DD3FC} %d%%{F-}\n' "$history_count"
+    else
+        # Dark grey bell, no count
+        printf '%%{F#888888}%%{F-}\n'
+    fi
+}
+
+toggle() {
+    dunstctl set-paused toggle
+}
+
+close_one() {
+    dunstctl close
+}
+
+clear_history() {
     dunstctl close-all
+    dunstctl history-clear
 }
 
-case $command in
-    
-    "display-history")
-        display_history $maxDisplayNumber
-    ;;
-    
-    "close-history")
-        close_history
-    ;;
-    
+case "$command" in
+    status)
+        status
+        ;;
+
+    display-history)
+        display_history
+        ;;
+
+    toggle)
+        toggle
+        ;;
+
+    close)
+        close_one
+        ;;
+
+    clear)
+        clear_history
+        ;;
+
     *)
-        echo "No command specified."
-        echo -e "\nAvailable commands :\n
-        display_history [display number | {history number}]\n
-        close_history"
+        echo "Usage:"
+        echo "  $0 status"
+        echo "  $0 display-history [count]"
+        echo "  $0 toggle"
+        echo "  $0 close"
+        echo "  $0 clear"
         exit 1
-    ;;
+        ;;
 esac

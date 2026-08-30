@@ -32,7 +32,11 @@ alias idea "xdg-open https://ideas.navikarana.io"
 alias smallidea "xdg-open https://smallideas.navikarana.io"
 
 
-alias copilot 'nvim ~/dev/txts/copilot_notes/copilot_(date "+%Y%m%d_%H%M%S").txt +CopilotChat'
+function aichat
+    set name "copilot_"(date "+%Y%m%d_%H%M%S")
+    tmux new-session -s "$name" \
+        "nvim ~/dev/txts/copilot_notes/$name.txt '+CopilotChat' '+set relativenumber number'"
+end
 
 alias bmake "bear -- make"
 
@@ -127,11 +131,47 @@ set -U fish_user_paths $ANDROID_HOME/cmdline-tools/latest/bin $fish_user_paths
 
 nvm use default --silent > /dev/null
 
-alias restartlogid="sudo systemctl restart logid"
 alias mailrestart='pkill thunderbird; nohup thunderbird >/dev/null 2>&1 & disown'
+alias olrestart='systemctl --user restart openlogi-agent.service'
+
 function clipboardrestart
     pkill copyq
     env QT_SCALE_FACTOR=2.5 setsid -f copyq
+end
+
+function vault-open
+    set -l luks_device /dev/disk/by-uuid/71bee9cb-a785-435f-b92a-79407f841b28
+    set -l mapper vault
+    set -l mountpoint /mnt/vault
+
+    if not test -e /dev/mapper/$mapper
+        sudo cryptsetup open $luks_device $mapper
+        or return 1
+    end
+
+    if not mountpoint -q $mountpoint
+        sudo mount /dev/mapper/$mapper $mountpoint
+        or return 1
+    end
+
+    echo "Vault opened at $mountpoint"
+end
+
+function vault-close
+    set -l mapper vault
+    set -l mountpoint /mnt/vault
+
+    if mountpoint -q $mountpoint
+        sudo umount $mountpoint
+        or return 1
+    end
+
+    if test -e /dev/mapper/$mapper
+        sudo cryptsetup close $mapper
+        or return 1
+    end
+
+    echo "Vault closed and locked"
 end
 
 
